@@ -33,11 +33,6 @@ class HebrewNumerology
         'ר' => 200,
         'ש' => 300,
         'ת' => 400,
-        'ך' => 20,
-        'ם' => 40,
-        'ן' => 50,
-        'ף' => 80,
-        'ץ' => 90,
     ];
 
     /**
@@ -128,7 +123,7 @@ class HebrewNumerology
         // that time, oh well, you are fucked
         array_shift($digits);
 
-        return 'ה'.$this->toNormalHebrewYear($digits);
+        return $this->toNormalHebrewYear($digits);
     }
 
     /**
@@ -139,11 +134,16 @@ class HebrewNumerology
      */
     protected function toNormalHebrewYear(array $digits)
     {
-        return implode(
+        $date = implode(
             array_reverse($this->mapToCharacters(
                 $this->expandDigits(array_reverse($digits))
             ))
         );
+
+        //add `` to second to last position
+        $startString = mb_substr($date, 0, -1, "UTF-8");
+        $endString = mb_substr($date, - 1 + 0, mb_strlen($date), "UTF-8");
+        return  $startString . "``" . $endString;
     }
 
     /**
@@ -159,7 +159,6 @@ class HebrewNumerology
 
             return $multiplier * 10;
         }, 1);
-
         return $expanded;
     }
 
@@ -196,7 +195,6 @@ class HebrewNumerology
                 $number -= $accumulator;
             }
         }
-
         return $characters;
     }
 }
