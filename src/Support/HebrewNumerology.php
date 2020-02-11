@@ -143,7 +143,7 @@ class HebrewNumerology
         //add `` to second to last position
         $startString = mb_substr($date, 0, -1, "UTF-8");
         $endString = mb_substr($date, - 1 + 0, mb_strlen($date), "UTF-8");
-        return  $startString . "``" . $endString;
+        return  $startString . "\"" . $endString;
     }
 
     /**
