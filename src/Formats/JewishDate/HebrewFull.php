@@ -43,7 +43,7 @@ class HebrewFull extends Format
         'כ"ז',
         'כ"ח',
         'כ"ט',
-        '`ל',
+        'ל',
     ];
 
     /**
