@@ -33,7 +33,7 @@ class HebrewFull extends Format
         'י"ז',
         'י"ח',
         'י"ט',
-        '`כ',
+        'כ',
         'כ"א',
         'כ"ב',
         'כ"ג',
