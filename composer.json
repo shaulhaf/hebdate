@@ -1,5 +1,5 @@
 {
-  "name": "kfirba/hebdate",
+  "name": "shaulhaf/hebdate",
   "description": "A library to convert jewish dates to gregorian dates and vice versa",
   "keywords": [
     "hebrew",
